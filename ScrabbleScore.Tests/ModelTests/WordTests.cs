@@ -43,5 +43,15 @@ namespace ScrabbleScore.Tests
       int result = newWord.GetScore();
       Assert.AreEqual(3,result);
     }
+
+    [TestMethod]
+
+    public void GetScore_ReturnMultiLetterMultiScore_5()
+    {
+      string test = "DOG";
+      Word newWord = new Word(test);
+      int result = newWord.GetScore();
+      Assert.AreEqual(5,result);
+    }
   }
 }
