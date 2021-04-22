@@ -16,14 +16,15 @@ namespace ScrabbleScore.Models
     public int GetScore()
     {
       char[] wordArray = PlayedWord.ToCharArray();
+      int wordScore = 0;
       foreach(char element in wordArray)
       {
         if (_scoreOne.Contains(element))
         {
-          return _wordScores[_scoreOne];
+          wordScore = wordScore + _wordScores[_scoreOne];
         }
       }
-      return 0;
+      return wordScore;
     }
   }
 }
